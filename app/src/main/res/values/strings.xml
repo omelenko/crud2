@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">crud1</string>
+    <string name="nameTextView">Ім\'я:</string>
+    <string name="phoneTextView">Номер:</string>
+    <string name="edit">Редагувати</string>
+    <string name="remove">Видалити</string>
+</resources>

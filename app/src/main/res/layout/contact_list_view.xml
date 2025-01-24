@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_view_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/nameTextView"/>
+
+        <TextView
+            android:id="@+id/text_view_one"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_view_phone"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/phoneTextView"/>
+
+        <TextView
+            android:id="@+id/text_view_two"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="@string/edit"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/remove_button"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="@string/remove"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+</LinearLayout>

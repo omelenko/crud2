@@ -1,0 +1,1 @@
+Перепишіть дз "Контакти" на MVVM, LiveData та Android Data Binding
