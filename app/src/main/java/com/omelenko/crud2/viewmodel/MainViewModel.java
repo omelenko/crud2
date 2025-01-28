@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.omelenko.crud2.MainActivity;
 import com.omelenko.crud2.contact.ContactAdapter;
 
+import javax.inject.Inject;
+
 public class MainViewModel extends ViewModel {
+    @Inject
     ContactAdapter adapter;
-    LinearLayoutManager linearLayoutManager;
+    private LinearLayoutManager linearLayoutManager;
     private MutableLiveData<String> name = new MutableLiveData<>("Додаток для запису контактів");
     private MutableLiveData<String> button = new MutableLiveData<>("Додати контакт");
 
@@ -16,7 +19,6 @@ public class MainViewModel extends ViewModel {
     {
         MainActivity.addCall();
     }
-
     public MutableLiveData<String> getName() {
         return name;
     }
@@ -41,11 +43,11 @@ public class MainViewModel extends ViewModel {
         this.adapter = adapter;
     }
 
-    public LinearLayoutManager getLinearLayoutManager() {
-        return linearLayoutManager;
-    }
-
     public void setLinearLayoutManager(LinearLayoutManager linearLayoutManager) {
         this.linearLayoutManager = linearLayoutManager;
+    }
+
+    public LinearLayoutManager getLinearLayoutManager() {
+        return linearLayoutManager;
     }
 }

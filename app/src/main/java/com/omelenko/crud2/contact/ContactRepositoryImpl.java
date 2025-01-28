@@ -2,19 +2,19 @@ package com.omelenko.crud2.contact;
 
 import android.annotation.SuppressLint;
 
-import java.util.ArrayList;
+import androidx.databinding.ObservableArrayList;
 
 public class ContactRepositoryImpl implements ContactRepository {
 
-    ArrayList<Contact> items;
+    ObservableArrayList<Contact> items;
 
     public ContactRepositoryImpl()
     {
-        items = new ArrayList<>();
+        items = new ObservableArrayList<>();
     }
 
     @Override
-    public ArrayList<Contact> getContacts() {
+    public ObservableArrayList<Contact> getContacts() {
         return items;
     }
 
@@ -40,5 +40,15 @@ public class ContactRepositoryImpl implements ContactRepository {
     @Override
     public void removeContact(int position) {
         items.remove(position);
+    }
+
+    @Override
+    public void removeContact(Contact contact) {
+        items.remove(contact);
+    }
+
+    @Override
+    public int getIndexOf(Contact contact) {
+        return items.indexOf(contact);
     }
 }

@@ -1,60 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.omelenko.crud2.viewmodel.ListViewModel" />
+        <variable
+            name="contact"
+            type="com.omelenko.crud2.contact.Contact" />
+    </data>
+
+    <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/text_view_name"
-            android:layout_width="100dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nameTextView"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/text_view_one"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/text_view_name"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.name}"/>
 
-        <TextView
-            android:id="@+id/text_view_phone"
-            android:layout_width="100dp"
+            <TextView
+                android:id="@+id/text_view_one"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="@{contact.name}"/>
+
+            <TextView
+                android:id="@+id/text_view_phone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.phone}"/>
+
+            <TextView
+                android:id="@+id/text_view_two"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:text="@{contact.phone}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/phoneTextView"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/text_view_two"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.edit}"
+                android:onClick="@{() -> viewModel.editButton_onClick(viewModel.getContactId(contact))}"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/remove_button"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.remove}"
+                android:onClick="@{() -> viewModel.removeButton_onClick(viewModel.getContactId(contact))}"
+                tools:ignore="ButtonStyle" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/edit_button"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:text="@string/edit"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/remove_button"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:text="@string/remove"
-            tools:ignore="ButtonStyle" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</layout>

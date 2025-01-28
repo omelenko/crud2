@@ -11,9 +11,13 @@ import com.omelenko.crud2.contact.ContactRepository;
 
 import java.util.Objects;
 
+import javax.inject.Inject;
+
 public class SecondaryViewModel extends ViewModel {
 
+    @Inject
     ContactAdapter adapter;
+    @Inject
     ContactRepository contactRepository;
     Contact editContact;
 
@@ -24,19 +28,15 @@ public class SecondaryViewModel extends ViewModel {
     private MutableLiveData<String> contactPhone = new MutableLiveData<>(editContact == null ? "~" : editContact.getPhone());
     private final MutableLiveData<String> button = new MutableLiveData<>(editContact == null ? "Додати контакт" : "Редагувати контакт");
     private int position = 1999;
-
-    public void nameTextChanged()
-    {
-
-    }
-
-    public void phoneTextChanged()
-    {
-
-    }
     public void setEditContact(int position)
     {
-        editContact = contactRepository.getContact(position);
+        this.editContact = contactRepository.getContact(position);
+        contactName.setValue(editContact.getName());
+        contactPhone.setValue(editContact.getPhone());
+    }
+    public void setPosition(int position)
+    {
+        this.position = position;
     }
     @SuppressLint("NotifyDataSetChanged")
     public void button_onClick()
@@ -86,24 +86,5 @@ public class SecondaryViewModel extends ViewModel {
 
     public MutableLiveData<String> getTitle() {
         return title;
-    }
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    public void setAdapter(ContactAdapter adapter) {
-        this.adapter = adapter;
-    }
-
-    public void setContactRepository(ContactRepository contactRepository) {
-        this.contactRepository = contactRepository;
-    }
-
-    public void setEditContact(Contact editContact) {
-        this.editContact = editContact;
     }
 }
