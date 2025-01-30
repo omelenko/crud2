@@ -1,6 +1,5 @@
 package com.omelenko.crud2.viewmodel;
 
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.omelenko.crud2.MainActivity;

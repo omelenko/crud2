@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableArrayList;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.MutableLiveData;
 
 import com.omelenko.crud2.MainActivity;
 import com.omelenko.crud2.contact.Contact;

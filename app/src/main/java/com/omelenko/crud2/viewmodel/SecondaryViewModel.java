@@ -20,15 +20,16 @@ public class SecondaryViewModel extends ViewModel {
     @Inject
     ContactRepository contactRepository;
     Contact editContact;
-    private MutableLiveData<String> contactName = new MutableLiveData<>(editContact == null ? "~" : editContact.getName());
-    private MutableLiveData<String> contactPhone = new MutableLiveData<>(editContact == null ? "~" : editContact.getPhone());
-    private final MutableLiveData<String> button = new MutableLiveData<>(editContact == null ? "Додати контакт" : "Редагувати контакт");
+    private MutableLiveData<String> contactName = new MutableLiveData<>("~");
+    private MutableLiveData<String> contactPhone = new MutableLiveData<>("~");
+    private final MutableLiveData<String> button = new MutableLiveData<>("Додати контакт");
     private int position = 1999;
     public void setEditContact(int position)
     {
         this.editContact = contactRepository.getContact(position);
         contactName.setValue(editContact.getName());
         contactPhone.setValue(editContact.getPhone());
+        button.setValue("Редагувати контакт");
     }
     public void setPosition(int position)
     {
