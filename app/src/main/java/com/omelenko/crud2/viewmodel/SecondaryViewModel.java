@@ -20,11 +20,7 @@ public class SecondaryViewModel extends ViewModel {
     @Inject
     ContactRepository contactRepository;
     Contact editContact;
-
-    private final MutableLiveData<String> title = new MutableLiveData<>("Додаток для запису контактів");
-    private final MutableLiveData<String> name = new MutableLiveData<>("Ім'я:");
     private MutableLiveData<String> contactName = new MutableLiveData<>(editContact == null ? "~" : editContact.getName());
-    private final MutableLiveData<String> phone = new MutableLiveData<>("Номер:");
     private MutableLiveData<String> contactPhone = new MutableLiveData<>(editContact == null ? "~" : editContact.getPhone());
     private final MutableLiveData<String> button = new MutableLiveData<>(editContact == null ? "Додати контакт" : "Редагувати контакт");
     private int position = 1999;
@@ -56,14 +52,6 @@ public class SecondaryViewModel extends ViewModel {
             MainActivity.popBackStack();
         }
     }
-
-    public MutableLiveData<String> getName() {
-        return name;
-    }
-
-    public MutableLiveData<String> getPhone() {
-        return phone;
-    }
     public MutableLiveData<String> getContactName() {
         return contactName;
     }
@@ -82,9 +70,5 @@ public class SecondaryViewModel extends ViewModel {
 
     public MutableLiveData<String> getButton() {
         return button;
-    }
-
-    public MutableLiveData<String> getTitle() {
-        return title;
     }
 }

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">crud2</string>
+    <string name="contact_name">Ім\'я:</string>
+    <string name="contact_phone">Номер:</string>
+    <string name="edit">Редагувати</string>
+    <string name="remove">Видалити</string>
+    <string name="app_title">Додаток для запису контактів</string>
+    <string name="add_button">Додати контакт</string>
 </resources>

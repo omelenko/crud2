@@ -25,7 +25,7 @@
                 android:id="@+id/text_view_name"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.name}"/>
+                android:text="@string/contact_name"/>
 
             <TextView
                 android:id="@+id/text_view_one"
@@ -37,7 +37,7 @@
                 android:id="@+id/text_view_phone"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.phone}"/>
+                android:text="@string/contact_phone"/>
 
             <TextView
                 android:id="@+id/text_view_two"
@@ -57,7 +57,7 @@
                 android:id="@+id/edit_button"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.edit}"
+                android:text="@string/edit"
                 android:onClick="@{() -> viewModel.editButton_onClick(viewModel.getContactId(contact))}"
                 tools:ignore="ButtonStyle" />
 
@@ -65,7 +65,7 @@
                 android:id="@+id/remove_button"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.remove}"
+                android:text="@string/remove"
                 android:onClick="@{() -> viewModel.removeButton_onClick(viewModel.getContactId(contact))}"
                 tools:ignore="ButtonStyle" />
 

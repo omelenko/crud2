@@ -16,29 +16,9 @@ import javax.inject.Inject;
 public class ListViewModel extends AndroidViewModel {
     @Inject
     ContactRepository contactRepository;
-    private final MutableLiveData<String> name = new MutableLiveData<>("Ім'я:");
-    private final MutableLiveData<String> phone = new MutableLiveData<>("Номер:");
-    private final MutableLiveData<String> edit = new MutableLiveData<>("Редагувати");
-    private final MutableLiveData<String> remove = new MutableLiveData<>("Видалити");
 
     public ListViewModel(@NonNull Application application) {
         super(application);
-    }
-
-    public MutableLiveData<String> getName() {
-        return name;
-    }
-
-    public MutableLiveData<String> getPhone() {
-        return phone;
-    }
-
-    public MutableLiveData<String> getEdit() {
-        return edit;
-    }
-
-    public MutableLiveData<String> getRemove() {
-        return remove;
     }
     public ObservableArrayList<Contact> getContacts()
     {

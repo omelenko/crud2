@@ -20,7 +20,7 @@
             android:id="@+id/textView3"
             android:layout_width="202dp"
             android:layout_height="23dp"
-            android:text="@={viewModel.name}"
+            android:text="@string/app_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:text="@={viewModel.button}"
+            android:text="@string/add_button"
             android:onClick="@{() -> viewModel.button_onClick()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
