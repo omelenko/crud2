@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.Crud2" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -6,4 +6,22 @@
     </style>
 
     <style name="Theme.Crud2" parent="Base.Theme.Crud2" />
+    <!--  Dark theme  -->
+        <style name="LightTheme" parent="Base.Theme.Crud2">
+            <item name="textColor">#000000</item>
+            <item name="metaTextColor">#606060</item>
+            <item name="bgColor">#ffffff</item>
+            <item name="buttonBgColor">#333333</item>
+            <item name="buttonTextColor">#ffffff</item>
+            <item name="themeName">light</item>
+        </style>
+
+        <style name="DarkTheme" parent="Base.Theme.Crud2">
+            <item name="textColor">#ffffff</item>
+            <item name="metaTextColor">#aeaeae</item>
+            <item name="bgColor">#000000</item>
+            <item name="buttonBgColor">#606080</item>
+            <item name="buttonTextColor">#ffffff</item>
+            <item name="themeName">dark</item>
+        </style>
 </resources>

@@ -1,7 +1,6 @@
 package com.omelenko.crud2.viewmodel;
 
 import androidx.lifecycle.ViewModel;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import com.omelenko.crud2.MainActivity;
 import com.omelenko.crud2.contact.ContactAdapter;
 
@@ -10,10 +9,18 @@ import javax.inject.Inject;
 public class MainViewModel extends ViewModel {
     @Inject
     ContactAdapter adapter;
-    private LinearLayoutManager linearLayoutManager;
     public void button_onClick()
     {
         MainActivity.addCall();
+    }
+    public void button2_onClick()
+    {
+        MainActivity.openOptions();
+    }
+
+    public void button3_onClick()
+    {
+        MainActivity.openFileFragment();
     }
     public ContactAdapter getAdapter() {
         return adapter;
@@ -21,13 +28,5 @@ public class MainViewModel extends ViewModel {
 
     public void setAdapter(ContactAdapter adapter) {
         this.adapter = adapter;
-    }
-
-    public void setLinearLayoutManager(LinearLayoutManager linearLayoutManager) {
-        this.linearLayoutManager = linearLayoutManager;
-    }
-
-    public LinearLayoutManager getLinearLayoutManager() {
-        return linearLayoutManager;
     }
 }

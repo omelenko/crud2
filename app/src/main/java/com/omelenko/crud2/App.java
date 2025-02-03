@@ -13,7 +13,6 @@ import com.omelenko.crud2.contact.ContactRepositoryImpl;
 import com.omelenko.crud2.viewmodel.ListViewModel;
 
 public class App extends Application {
-
     private static AppComponent component;
     static ListViewModel viewModel;
     static ContactAdapter adapter;

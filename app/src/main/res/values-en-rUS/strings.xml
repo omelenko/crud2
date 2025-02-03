@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">crud2</string>
+    <string name="contact_name">Name:</string>
+    <string name="contact_phone">Phone:</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="app_title">Contact app</string>
+    <string name="add_button">Add contact</string>
+    <string name="confirm">Confirm</string>
+    <string name="username">Username</string>
+    <string name="username_summary">Input username</string>
+    <string name="theme">Dark theme</string>
+    <string name="language">Choose language</string>
+    <string name="options">Options</string>
+    <string name="file">Files</string>
+</resources>

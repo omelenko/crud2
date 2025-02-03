@@ -14,36 +14,42 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="?attr/bgColor">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="?attr/bgColor">
 
             <TextView
                 android:id="@+id/text_view_name"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/contact_name"/>
+                android:text="@string/contact_name"
+                android:textColor="?attr/textColor"/>
 
             <TextView
                 android:id="@+id/text_view_one"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:text="@{contact.name}"/>
+                android:text="@{contact.name}"
+                android:textColor="?attr/textColor"/>
 
             <TextView
                 android:id="@+id/text_view_phone"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="@string/contact_phone"/>
+                android:text="@string/contact_phone"
+                android:textColor="?attr/textColor"/>
 
             <TextView
                 android:id="@+id/text_view_two"
                 android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:text="@{contact.phone}"/>
+                android:text="@{contact.phone}"
+                android:textColor="?attr/textColor"/>
 
         </LinearLayout>
 
@@ -51,13 +57,16 @@
             style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="?attr/bgColor">
 
             <Button
                 android:id="@+id/edit_button"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:text="@string/edit"
+                android:textColor="?attr/buttonTextColor"
+                android:backgroundTint="?attr/buttonBgColor"
                 android:onClick="@{() -> viewModel.editButton_onClick(viewModel.getContactId(contact))}"
                 tools:ignore="ButtonStyle" />
 
@@ -66,6 +75,8 @@
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:text="@string/remove"
+                android:textColor="?attr/buttonTextColor"
+                android:backgroundTint="?attr/buttonBgColor"
                 android:onClick="@{() -> viewModel.removeButton_onClick(viewModel.getContactId(contact))}"
                 tools:ignore="ButtonStyle" />
 

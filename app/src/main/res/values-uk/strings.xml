@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">crud2</string>
     <string name="contact_name">Ім\'я:</string>
@@ -11,8 +12,6 @@
     <string name="username_summary">Введіть ім\'я користувача</string>
     <string name="theme">Темна тема</string>
     <string name="language">Вибір мови</string>
-    <string name="ukrainian" translatable="false">Українська</string>
-    <string name="english" translatable="false">English</string>
     <string name="options">Налаштування</string>
     <string name="file">Файли</string>
 </resources>

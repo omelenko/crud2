@@ -1,15 +1,19 @@
 package com.omelenko.crud2.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.PreferenceManager;
 
 import com.omelenko.crud2.App;
 import com.omelenko.crud2.R;
@@ -38,5 +42,18 @@ public class SecondaryFragment extends Fragment {
         binding.setViewModel(viewModel);
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Context context = this.requireContext();
+        View view = this.requireView();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String username = prefs.getString("username", "Не встановлено");
+
+        TextView optionsText = view.findViewById(R.id.optionsText1);
+        optionsText.setText(username);
     }
 }
