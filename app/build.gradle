@@ -33,10 +33,12 @@ android {
 }
 
 dependencies {
+    implementation libs.room.runtime
     implementation libs.lifecycle.viewmodel
     implementation libs.lifecycle.livedata
     implementation libs.dagger
     implementation libs.preference
+    annotationProcessor libs.room.compiler
     annotationProcessor libs.dagger.compiler
     implementation libs.fragment
     implementation libs.appcompat

@@ -1,6 +1,7 @@
 package com.omelenko.crud2.viewmodel;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -34,21 +35,23 @@ public class SecondaryViewModel extends ViewModel {
     {
         this.position = position;
     }
-    @SuppressLint("NotifyDataSetChanged")
     public void button_onClick()
     {
         if(!Objects.equals(contactName.getValue(), "") && !Objects.equals(contactName.getValue(), ""))
         {
-            Contact newContact = new Contact(contactName.getValue(), contactPhone.getValue());
+            Contact newContact = new Contact();
+            newContact.setName(contactName.getValue());
+            newContact.setPhone(contactPhone.getValue());
             if(position != 1999)
             {
-                contactRepository.editContact(newContact, position);
+                Contact contactToEdit = contactRepository.getContact(position);
+                newContact.setId(contactToEdit.getId());
+                contactRepository.editContact(newContact);
             }
             else
             {
                 contactRepository.addContact(newContact);
             }
-            adapter.notifyDataSetChanged();
             MainActivity.popBackStack();
         }
     }

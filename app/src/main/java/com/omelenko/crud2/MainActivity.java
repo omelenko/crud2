@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceManager;
 
+import com.omelenko.crud2.contact.Contact;
 import com.omelenko.crud2.fragment.FileFragment;
 import com.omelenko.crud2.fragment.MainFragment;
 import com.omelenko.crud2.fragment.OptionsFragment;
@@ -48,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static void editCall(int position)
+    public static void editCall(Contact contact)
     {
         Bundle bundle = new Bundle();
-        bundle.putInt("position", position);
+        bundle.putLong("position", contact.getId());
 
         SecondaryFragment secondaryFragment = new SecondaryFragment();
         secondaryFragment.setArguments(bundle);
@@ -88,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack("file")
                 .commit();
     }
-
     public static void popBackStack()
     {
         fragmentManager.popBackStack();

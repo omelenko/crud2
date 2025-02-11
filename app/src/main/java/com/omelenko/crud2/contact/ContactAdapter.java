@@ -23,7 +23,11 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     @NonNull
     @Override
     public ContactViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ContactListViewBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.contact_list_view, parent, false);
+        ContactListViewBinding binding = DataBindingUtil.
+                inflate(LayoutInflater.from(parent.getContext()),
+                        R.layout.contact_list_view,
+                        parent,
+                        false);
         return new ContactViewHolder(binding);
     }
 
@@ -31,10 +35,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         App.getComponent().injectsListViewModel(viewModel);
-        App.makeObservable();
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         Contact contact = viewModel.getContact(position);

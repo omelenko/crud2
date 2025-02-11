@@ -4,44 +4,38 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Contact implements Parcelable {
-    private final String name;
-    private final String phone;
+@Entity
+public class Contact {
 
-    public static final Creator<Contact> CREATOR = new Creator<>() {
-        @Override
-        public Contact createFromParcel(Parcel in) {
-            return new Contact(in);
-        }
+    @PrimaryKey(autoGenerate = true)
+    private Integer id;
+    private String name;
+    private String phone;
 
-        @Override
-        public Contact[] newArray(int size) {
-            return new Contact[size];
-        }
-    };
-
-    public Contact(String Name, String Phone) {
+    /*public Contact(String Name, String Phone) {
         name = Name;
         phone = Phone;
-    }
-
-    protected Contact(Parcel in) {
-        name = in.readString();
-        phone = in.readString();
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(phone);
-    }
+    }*/
 
     public String getName() {return name;}
     public String getPhone() {return phone;}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

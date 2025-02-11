@@ -67,7 +67,7 @@
                 android:text="@string/edit"
                 android:textColor="?attr/buttonTextColor"
                 android:backgroundTint="?attr/buttonBgColor"
-                android:onClick="@{() -> viewModel.editButton_onClick(viewModel.getContactId(contact))}"
+                android:onClick="@{() -> viewModel.editButton_onClick(contact)}"
                 tools:ignore="ButtonStyle" />
 
             <Button
@@ -77,7 +77,7 @@
                 android:text="@string/remove"
                 android:textColor="?attr/buttonTextColor"
                 android:backgroundTint="?attr/buttonBgColor"
-                android:onClick="@{() -> viewModel.removeButton_onClick(viewModel.getContactId(contact))}"
+                android:onClick="@{() -> viewModel.removeButton_onClick(contact)}"
                 tools:ignore="ButtonStyle" />
 
         </LinearLayout>

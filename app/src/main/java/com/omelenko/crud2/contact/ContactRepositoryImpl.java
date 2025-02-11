@@ -4,51 +4,50 @@ import android.annotation.SuppressLint;
 
 import androidx.databinding.ObservableArrayList;
 
+import com.omelenko.crud2.App;
+
+import java.util.List;
+
 public class ContactRepositoryImpl implements ContactRepository {
 
-    ObservableArrayList<Contact> items;
+    ContactDao dao;
 
     public ContactRepositoryImpl()
     {
-        items = new ObservableArrayList<>();
+        dao = App.getInstance().getDatabase().contactDao();
     }
 
     @Override
-    public ObservableArrayList<Contact> getContacts() {
-        return items;
+    public List<Contact> getContacts() {
+        return dao.getAll();
     }
 
     @Override
     public Contact getContact(int position) {
-        return items.get(position);
+        return dao.getAll().get(position);
     }
-
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void addContact(Contact contact) {
-        items.add(contact);
+        dao.insert(contact);
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
-    public void editContact(Contact contact, int position) {
-        items.remove(position);
-        items.add(position, contact);
+    public void editContact(Contact contact) {
+        dao.update(contact);
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void removeContact(int position) {
-        items.remove(position);
+        dao.delete(dao.getAll().get(position));
     }
 
     @Override
     public void removeContact(Contact contact) {
-        items.remove(contact);
+        dao.delete(contact);
     }
 
     @Override
     public int getIndexOf(Contact contact) {
-        return items.indexOf(contact);
+        return dao.getAll().indexOf(contact);
     }
 }
